@@ -1,29 +1,22 @@
 import React from 'react';
+import './App.css';
+import { Heading } from './Components/Heading';
+import { Status } from './Components/Status';
+import { Oscar } from './Components/Oscar'; // Importe o componente Oscar
 import { Greet } from './Components/Greet';
-import { Person } from './Components/Person';
-import { PersonList } from './Components/PersonList';
 
 function App() {
-  const personName = {
-    firstName: 'Bruce',
-    lastName: 'Wayne',
-  };
-
-  const nameList = [
-    { firstName: 'Bruce', lastName: 'Wayne' },
-    { firstName: 'Clark', lastName: 'Kent' },
-    { firstName: 'Bruce', lastName: 'Wayne' }
-  ];
-
   return (
     <div className="App">
-      <h2>
-        <Greet name="Vishwas" messageCount={20} isLoggedIn={false} />
-        <Person name={personName} />
-        <PersonList names={nameList} />
-      </h2>
+      <Status status='loading'/>
+      <Heading>Placeholder text</Heading>
+      <Oscar>
+        <Heading>Oscar goes to Leonardo Dicaprio!</Heading> 
+      </Oscar>
+      <Greet name='Vishwas'  isLoggedIn={false}/>
     </div>
   );
 }
 
 export default App;
+
