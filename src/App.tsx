@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-
-
-
-
+import { Private } from './Components/auth/Private';
+import { Profile } from './Components/auth/Profile';
 
 function App() {
   return (
     <div className="App">
-     <Counter/>
+      <Private isLoggedIn={true} Component={Profile} />
     </div>
   );
 }
