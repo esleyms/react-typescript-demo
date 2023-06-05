@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
-import { UserContexProvider } from './Components/UserContext';
-import { useReducer } from './Components/context/User'
+import { DomRef } from './Components/DomRef';
+import { MutableRef } from './Components/MutableRef';
+
 
 
 
 function App() {
   return (
     <div className="App">
-   <UserContexProvider>
-    <User/>
-   </UserContexProvider>
+      <DomRef/>
+      <MutableRef/>
     </div>
   );
 }
