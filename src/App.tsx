@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import { DomRef } from './Components/DomRef';
-import { MutableRef } from './Components/MutableRef';
+
 
 
 
@@ -9,8 +8,7 @@ import { MutableRef } from './Components/MutableRef';
 function App() {
   return (
     <div className="App">
-      <DomRef/>
-      <MutableRef/>
+     <Counter/>
     </div>
   );
 }
