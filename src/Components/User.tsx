@@ -1,30 +1,27 @@
-import { useState } from "react";
-
-type AuthUser = {
-    name: string;
-    email: string;
-};
+import React, { useContext } from 'react';
+import { UserContext } from './UserContext';
 
 export const User = () => {
-    const [user, setUser] = useState<AuthUser>({} as AuthUser);
+  const userContext = useContext(UserContext);
 
-    const handleLogin = () => {
-        // Implementação do handleLogin
-    };
+  const handleLogin = () => {
+    if (userContext) {
+      userContext.setUser({ name: 'John', email: 'john@example.com' });
+    }
+  };
 
-    const handleLogout = () => {
-        // Implementação do handleLogout
-        setUser({
-            name: 'Vishwas',
-            email: 'vishwas@example.com'
-        });
-    };
+  const handleLogout = () => {
+    if (userContext) {
+      userContext.setUser(null);
+    }
+  };
 
-    return (
-        <div>
-            <button onClick={handleLogin}>Login</button>
-            <div>User name is {user.name}</div>
-            <div>User email is {user.email}</div>
-        </div>
-    );
+  return (
+    <div>
+      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogout}>Logout</button>
+      <div>User name is {userContext?.user?.name}</div>
+      <div>User email is {userContext?.user?.email}</div>
+    </div>
+  );
 };
